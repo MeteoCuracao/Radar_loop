@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	background-color: #98b3cd;
+}
+
+#centered {
+    width:720px;
+    height:720px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-360px;
+    margin-top:-360px;
+}
+
+#time {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  
+  font-family: "Proxima Nova Regular","Helvetica Neue",Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  font-size: 20pt;
+  font-style: normal;
+}
+
+#radar {
+  position: absolute;
+  
+  background-image: url(output/radar.png);
+  background-repeat:no-repeat;
+  background-position: 0 0; 
+  
+  width: 719px;
+  height: 720px;
+}
+/*
+#radar img.active {
+  display: block;
+}*/
+
+#background img, #radar img {
+  position: absolute;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <script src="output/images.js"></script>
+  <script src="jquery-1.9.1.min.js"></script>
+  <script>
+  
+    /*
+    Written during Apps4Curaçao
+    March 3 - 8, 2013
+    Bert Spaan, Waag Society
+    bert@waag.org
+    bert.spaan@gmail.com
+    */
+    
+    $(document).ready(function () {
+      // for (var i = 0; i < images.length; i++) {
+      //   var image = images[i];
+      //   // Do something with element i.
+      //   $("#radar").append('<img src="' + image + '" />');
+      // }
+      var fps = 10;
+      
+      var start_time = new Date(2013, 2, 5, 13, 15, 0, 0);
+      
+      var minutes = 30;
+      
+      var radar_width = 719;
+      
+      var tid = setTimeout(animate_radar, 1/fps*1000);
+      var time = start_time;
+      var active = 1;
+      function animate_radar() {
+        if (active > images.length) {
+          active = 1;
+          time = start_time;
+        }
+          
+        $("#radar").css('background-position', '' + (-radar_width * (active - 1)) + 'px 0px');
+        $("#time").html(time.getHours() + ":" + time.getMinutes());
+        
+        active += 1;
+        time = new Date(time.getTime() + minutes*60000);
+
+        tid = setTimeout(animate_radar, 1/fps*1000);
+      }
+      
+    });
+  </script>
+</head>
+<body>
+
+  <div id="centered">
+    <div id="background"><img alt="Curaçao" src="curacao.png" /></div>
+    <div id="radar"></div>
+    <div id="time">13:45</div>
+  </div>
+
+</body>
+</html>
